@@ -204,11 +204,27 @@ export default async function ProjetoDetalhesPage({
                   Decisão registrada
                 </p>
 
-                {decisao.impacto && (
-                  <span className="text-xs bg-purple-950 border border-purple-700 text-purple-200 px-3 py-1 rounded-full">
-                    Impacto: {decisao.impacto}
-                  </span>
-                )}
+                <div className="flex items-center gap-2 flex-wrap">
+                  {decisao.impacto && (
+                    <span className="text-xs bg-purple-950 border border-purple-700 text-purple-200 px-3 py-1 rounded-full">
+                      Impacto: {decisao.impacto}
+                    </span>
+                  )}
+
+                  <Link
+                    href={`/projetos/${id}/editar-decisao/${decisao.id}`}
+                    className="bg-blue-600 hover:bg-blue-500 px-3 py-1 rounded-lg text-sm"
+                  >
+                    Editar
+                  </Link>
+
+                  <Link
+                    href={`/projetos/${id}/excluir-decisao/${decisao.id}`}
+                    className="bg-red-600 hover:bg-red-500 px-3 py-1 rounded-lg text-sm"
+                  >
+                    Excluir
+                  </Link>
+                </div>
               </div>
 
               <h3 className="text-2xl font-bold mb-4">
