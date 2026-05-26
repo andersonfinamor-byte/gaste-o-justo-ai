@@ -162,9 +162,27 @@ export default async function ProjetoDetalhesPage({
               key={memoria.id}
               className="bg-zinc-900 border border-zinc-800 rounded-xl p-6"
             >
-              <h3 className="text-xl font-semibold mb-3">
-                {memoria.titulo}
-              </h3>
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <h3 className="text-xl font-semibold">
+                  {memoria.titulo}
+                </h3>
+
+                <div className="flex gap-2">
+                  <Link
+                    href={`/projetos/${id}/editar-memoria/${memoria.id}`}
+                    className="bg-blue-600 hover:bg-blue-500 px-3 py-1 rounded-lg text-sm"
+                  >
+                    Editar
+                  </Link>
+
+                  <Link
+                    href={`/projetos/${id}/excluir-memoria/${memoria.id}`}
+                    className="bg-red-600 hover:bg-red-500 px-3 py-1 rounded-lg text-sm"
+                  >
+                    Excluir
+                  </Link>
+                </div>
+              </div>
 
               <p className="text-zinc-400">{memoria.conteudo}</p>
             </div>
